@@ -57,7 +57,7 @@ function chart(data, width, height, barPadding = 0, padding = 20) {
 		    .text(e => e[0])
 			.attr("x", (e, i) => (i + 0.5) * barWidth)
 			.attr("y", e => diagramHeight - e[1] * scaling - 3)
-			.attr("transform", (e, i) => "rotate(-90, " + (i * barWidth + barWidth * 0.5) + ", " + (diagramHeight - e[1] * scaling - 3) + ")" )
+			.attr("transform", (e, i) => "rotate(-90, " + (i * barWidth + barWidth * 0.5) + ", " + (diagramHeight - e[1] * scaling - 3) + ") translate(" + -padding * 2 + ", 2)" )
 			.attr("font-family", "sans-serif")
 			.attr("font-size", "11px")
 			.attr("fill", "gray"));
@@ -65,7 +65,7 @@ function chart(data, width, height, barPadding = 0, padding = 20) {
 
 	const yScale = d3.scaleLinear()
 		.domain([maxValue, 0])
-		.range([padding + diagramHeight - maxValue * scaling, diagramHeight+padding]);
+		.range([padding * 2 + diagramHeight - maxValue * scaling, padding * 2 + diagramHeight]);
 
 	const yAxis = d3.axisLeft(yScale)
 	.ticks(10);
