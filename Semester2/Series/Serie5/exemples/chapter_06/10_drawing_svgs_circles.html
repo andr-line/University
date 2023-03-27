@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>D3: Drawing SVG circles with data</title>
+		<script type="text/javascript" src="../d3/d3.min.js"></script>
+		<style type="text/css">
+			/* No style rules here yet */
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+
+			//Width and height
+			const w = 500;
+			const h = 50;
+
+			//Data
+			const dataset = [ 5, 10, 15, 20, 25 ];
+
+			//Create SVG element
+			const svg = d3.select("body")
+						.append("svg")
+						.attr("width", 500)
+						.attr("height", 50);
+
+			svg.selectAll("circle")
+			    .data(dataset)
+			    .join((enter) => enter.append("circle")
+					.attr("cx", (d, i) => (i * 50) + 25)
+				   	.attr("cy", h/2)
+				   	.attr("r", (d) => d));
+
+		</script>
+	</body>
+</html>

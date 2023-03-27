@@ -1,0 +1,30 @@
+{
+	"france" : {
+		"inhabitants_per_capita" : 1,
+		"inhabitants_without_capita" : 16594,
+		"inhabitants" : 67413000,
+		"head_of_state" : "Emmanuel Macron",
+		"good_pancakes" : "Yes"
+	},
+	"italy" : {
+		"inhabitants_per_capita" : 1,
+		"inhabitants_without_capita" : "Maybe around 7?",
+		"inhabitants" : 60317116,
+		"head_of_state" : "Weird conservative woman",
+		"good_pancakes" : "The pasta is better."
+	},
+	"LGBTQ+" : {
+		"inhabitants_per_capita" : "10% - 20%",
+		"inhabitants_without_capita" : "A lot in Iran, Nigeria, Saudi Arabia, Somalia, Sudan and Yemen sadly.",
+		"inhabitants" : 1210268946,
+		"head_of_state" : "RuPaul?",
+		"good_pancakes" : "Definetly, yes."
+	},
+	"belgium" : {
+		"inhabitants_per_capita" : 1,
+		"inhabitants_without_capita" : 19,
+		"inhabitants" : 11584008,
+		"head_of_state" : "Alexander De Croo",
+		"good_pancakes" : "Yess"
+	}
+}

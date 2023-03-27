@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>D3: Loading GeoJSON data and generating SVG paths</title>
+		<script type="text/javascript" src="../d3/d3.min.js"></script>
+		<style type="text/css">
+			/* No style rules here yet */
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+
+		//Width and height
+			const w = 960;
+			const h = 600;
+
+			//Define default path generator
+			const path = d3.geoPath();
+
+			//Create SVG element
+			const svg = d3.select("body")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h);
+
+			//Load in GeoJSON data
+			d3.json("cantons_suisse.json").then((json) => {
+				//Bind data and create one path per GeoJSON feature
+				console.log(json);
+				svg.selectAll("path")
+				   .data(json.features)
+				   .join((enter) => enter.append("path")
+				   .attr("d", path)
+				   .attr("fill","steelblue"));
+			});
+
+		</script>
+	</body>
+</html>

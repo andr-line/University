@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Flags</title>
+	
+	<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+	<div class="navbar">
+		<a class="navbarbutton" href="index.html" onmouseover="console.log('Adolf')">Adolf</a>
+		<a class="navbarbutton" href="page2.html" onmouseover="console.log('Android')">Android</a>
+		<a class="navbarbutton" href="page3.html" onmouseover="console.log('Calculator')">Area calculator</a>
+		<a class="active navbarbutton" href="page4.html" onmouseover="console.log('Flags')">Flags</a>
+		<a class="navbarbutton" href="page5.html" onmouseover="console.log('Bar chart')">Bar chart</a>
+		<button class="navbarbutton" onmouseover="console.log('about')" onclick="alert('This site was created on the 8th of march 2023 for a series. Don‘t take it seriously please.')">About</button>
+	</div>
+	<div class="body">
+		<div class="flags">
+			<svg class="flag selected" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" id="france">
+				<rect x="0" y="0" width=1 height=2 fill="blue" />
+				<rect x="1" y="0" width=1 height=2 fill="white" />
+				<rect x="2" y="0" width=1 height=2 fill="red" />
+			</svg>
+			<svg class="flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" id="italy">
+				<rect x="0" y="0" width=1 height=2 fill="green" />
+				<rect x="1" y="0" width=1 height=2 fill="white" />
+				<rect x="2" y="0" width=1 height=2 fill="red" />
+			</svg>
+		</div>
+		<div class="flags">
+			<svg class="flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" id="belgium">
+				<rect x="0" y="0" width=1 height=2 fill="black" />
+				<rect x="1" y="0" width=1 height=2 fill="yellow" />
+				<rect x="2" y="0" width=1 height=2 fill="red" />
+			</svg>
+			<svg class="flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6" id="LGBTQ+">
+				<rect x="0" y="0" width=9 height=1 fill="red" />
+				<rect x="0" y="1" width=9 height=1 fill="orange" />
+				<rect x="0" y="2" width=9 height=1 fill="yellow" />
+				<rect x="0" y="3" width=9 height=1 fill="green" />
+				<rect x="0" y="4" width=9 height=1 fill="blue" />
+				<rect x="0" y="5" width=9 height=1 fill="purple" />
+			</svg>
+		</div>
+		
+		<div class="infos">
+			<table id="countryInfo">
+				<tr>
+					<th id="country_name" colspan="2">country_name</th>
+				</tr>
+				<tr>
+					<td>Inhabitants</td>
+					<td id="inhabitants">inhabitants</td>
+				</tr>
+				<tr>
+					<td>Inhabitants per capita</td>
+					<td id="inhabitants_per_capita">inhabitants_per_capita</td>
+				</tr>
+				<tr>
+					<td>Inhabitants without capita<br>(haha, get it?)</td>
+					<td id="inhabitants_without_capita">inhabitants_without_capita</td>
+				</tr>
+				<tr>
+					<td>Head of state</td>
+					<td id="head_of_state">head_of_state</td>
+				</tr>
+				<tr>
+					<td>They make good pancakes.</td>
+					<td id="good_pancakes">good_pancakes</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<script type="module" src="script.js"></script>
+</body>
+</html>

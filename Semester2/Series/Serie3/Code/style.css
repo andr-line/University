@@ -1,0 +1,135 @@
+/* General */
+
+.darkmode {
+	color: white;
+}
+
+body {
+	color: black;
+	background: #ffffff;
+}
+
+body.darkmode {
+	background: #121212;
+}
+
+.body {
+	display: grid;
+    text-align: center;
+    content-align: center;
+	justify-content: center;
+    font-family: 'Arial';
+    font-size: 1em;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+a {
+	color: black;
+}
+
+/* Navigation bar */
+
+.navbar {
+	display: flex;
+	justify_content: flex-start;
+	padding-bottom: 2em;
+	flex-basis: 300px;
+	flex-shrink: 0;
+}
+
+.navbarbutton {
+	all: unset;
+	color: black;
+	background: orange;
+	padding: 2em;
+}
+
+.navbarbutton.active {
+	background: yellow;
+	border: 1px solid #999;
+}
+
+#title {
+	color: black;
+    font-family: 'Arial';
+    font-size: 10rem;
+	position: absolute;
+	top: 8rem;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+table {
+	border: 1px solid gray;
+	border-collapse: collapse;
+	margin-top: 7rem;
+	width: 100%;
+}
+
+td {
+	padding: 2rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	text-align: left;
+	border: 1px solid gray;
+	border-collapse: collapse;
+}
+
+th {
+    font-family: 'Arial';
+    font-size: 4rem;
+	text-align: center;
+	border: 1px solid gray;
+	border-collapse: collapse;
+}
+
+.citation:first-child {
+	background: #cdcdcd;
+	font: bold 2em Verdana, Geneva, sans-serif;
+	padding: 2em;
+}
+
+.darkmode.citation:first-child {
+	background: #232323;
+}
+
+.copyright {
+	color: gray;
+	padding-top: 8em;
+	padding: 2em;
+}
+
+/* Android */
+
+.white {
+	fill: white;
+}
+
+.white.darkmode {
+	fill: black;
+}
+
+button:not(.navbarbutton) {
+	width: 100%;
+	background: #cdcdcd;
+	margin-top: 3em;
+	border-radius: 1em;
+	font: bold 2em Verdana, Geneva, sans-serif;
+	color: black;
+	border: 0;
+}
+
+button.darkmode:not(.navbarbutton) {
+	background: #232323;
+	color: white;
+}
+
+svg {
+	margin-top: 3em;
+}
+
+input[type="text"], input[type="number"], select {
+  color: black; /* change this to the color you want */
+}
+

@@ -1,0 +1,105 @@
+@media (prefers-color-scheme: dark) {
+	a {
+        color: white;
+    }
+	
+	a:hover {
+		color: gray;
+	}
+	
+	body {
+		color: white;
+        background: #121212;
+    }
+	
+	#citation {
+		background: #323232;
+	}
+	
+	#copyright {
+		color: #323232;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	a {
+        color: black;
+    }
+	
+	a:hover {
+		color: gray;
+	}
+	
+	body {
+		color: black;
+        background: #ededed;
+    }
+	
+	#citation {
+		background: #cdcdcd;
+	}
+	
+	#copyright {
+		color: #cdcdcd;
+	}
+}
+
+body {
+    display: grid;
+    text-align: center;
+    content-align: center;
+	justify-content: center;
+    font-family: 'Arial';
+    font-size: 2rem;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+#title {
+	color: black;
+    font-family: 'Arial';
+    font-size: 10rem;
+	position: absolute;
+	top: 8rem;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+table {
+	border: 1px solid gray;
+	border-collapse: collapse;
+	margin-top: 7rem;
+	width: 100%;
+}
+
+td {
+	padding: 2rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	text-align: left;
+	border: 1px solid gray;
+	border-collapse: collapse;
+}
+
+th {
+    font-family: 'Arial';
+    font-size: 4rem;
+	text-align: center;
+	border: 1px solid gray;
+	border-collapse: collapse;
+}
+
+#citation {
+    margin-top: 5rem;
+	height: 6rem;
+	margin-bottom: 20rem;
+}
+
+#citation-text {
+	margin: 2rem;
+}
+
+#citation-name {
+	padding-top: 2rem;
+	padding-bottom: 20rem;
+}
