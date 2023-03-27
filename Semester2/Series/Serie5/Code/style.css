@@ -138,6 +138,10 @@ svg {
 	margin-top: 3em;
 }
 
+svg.text {
+	color: white
+}
+
 input[type="text"], input[type="number"], select {
   color: var(--textcolor);
 }

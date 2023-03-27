@@ -18,8 +18,7 @@ fetch("./data/students_flags.json")
 			.sort((a,b) => b[1] - a[1])
 		console.log(data[0]);
 		
-		barChart(data, 500, 300);
-		//chart(data, 800, 500, 1)
+		chart(data, 800, 500, 1)
 	})
 	.catch(error => {
 		//console.error(error);
@@ -29,50 +28,27 @@ fetch("./data/students_flags.json")
 	
 
 // D3.js :
-function barChart(data, width, height) {
-	const barWidth = width / data.length;
-	const scaling = 4;
-	
-	const svg = d3.select("body")
-		.append("svg")
-		.attr("width", width)
-		.attr("height", height);
+function chart(data, width, height, barPadding = 0, padding = 20) {
+    const diagramWidth = width - padding * 2;
+	const diagramHeight = height - padding * 2;
+	const barWidth = diagramWidth / data.length;
+	// scaling using the maximum value in the data: ["name", value]
+    const maxValue = data.reduce((a,b) => a[1] > b[1] ? a : b)[1];
+	const scaling = diagramHeight / maxValue;
 
+	const svg = d3.select("#chart").append("svg")
+		.attr("width", width)
+		.attr("height", height)
+		.attr("viewBox", "" + -padding + " " + -padding + " " + (width + 2 * padding) + " " + (height + 2 * padding))
+		.attr("x", 100);
+		
 	svg.selectAll("rect")
 		.data(data)
 		.join(enter => enter.append("rect")
 		    .attr("x", (e, i) => i * barWidth)
 		    .attr("y", e => height - (e[1] * scaling))
-		    .attr("width", barWidth)
-		    .attr("heigth", e => e[1] * scaling)
-		    .attr("fill", e => "rgb(75, 150, " + e[1] + ")"));
-		
-	svg.selectAll("text")
-		.data(data)
-		.join(enter => enter.append("text")
-		    .text(e => e[0])
-		    .attr("x", (e, i) => (i + 0.5) * barWidth)
-		    .attr("y", e => height - (e * scaling)));
-	console.log("created bar chart");
-};
-
-function chart(data, width, height, padding = 0) {
-	let dataset = [ ["number one",100], ["number two",200], ["number three",50]];
-	dataset = data;
-	const barWidth = width / dataset.length;
-
-	const svg = d3.select("body")
-		.append("svg")
-		.attr("width", width)
-		.attr("height", height);
-		
-	svg.selectAll("rect")
-		.data(dataset)
-		.join(enter => enter.append("rect")
-		    .attr("x", (e, i) => i * barWidth)
-		    .attr("y", e => height - (e[1] * 4))
-		    .attr("width", barWidth - padding)
-		    .attr("height", e  => e[1] * 4)
+		    .attr("width", barWidth - barPadding)
+		    .attr("height", e  => e[1] * scaling)
 		    .attr("fill", e => "rgb(25, 105, " + e[1] + ")"));
 
 	svg.selectAll("text")
@@ -80,6 +56,24 @@ function chart(data, width, height, padding = 0) {
 		.join(enter => enter.append("text")
 		    .text(e => e[0])
 			.attr("x", (e, i) => (i + 0.5) * barWidth)
-			.attr("y", e => height - e[1] * 4 - 3));
+			.attr("y", e => diagramHeight - e[1] * scaling - 3)
+			.attr("transform", (e, i) => "rotate(-90, " + (i * barWidth + barWidth * 0.5) + ", " + (diagramHeight - e[1] * scaling - 3) + ") translate(" + -padding * 2 + ", 2)" )
+			.attr("font-family", "sans-serif")
+			.attr("font-size", "11px")
+			.attr("fill", "gray"));
+
+
+	const yScale = d3.scaleLinear()
+		.domain([maxValue, 0])
+		.range([padding * 2 + diagramHeight - maxValue * scaling, padding * 2 + diagramHeight]);
+
+	const yAxis = d3.axisLeft(yScale)
+	.ticks(10);
+
+	svg.append("g")
+		.attr("class", "axis")
+		.attr("transform", "translate(" + 0 + ", 0)")
+		.call(yAxis);
+
 	console.log("created bar chart");
 };
