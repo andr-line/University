@@ -40,17 +40,19 @@ function barChart(data, width, height) {
 
 	svg.selectAll("rect")
 		.data(data)
-		.join(enter => enter.append("rect"))
+		.join(enter => enter.append("rect")
 		.attr("x", (e, i) => i * barWidth)
 		.attr("y", e => height - (e[1] * scaling))
 		.attr("width", barWidth)
 		.attr("heigth", e => e[1] * scaling)
-		.attr("fill", "#FF0000");
+		.attr("fill", e => "rgb(75, 150, " + e[1] + ")"));
 		
 	svg.selectAll("text")
 		.data(data)
-		.join(enter => enter.append("text"))
-		.text(e => e[0]);
+		.join(enter => enter.append("text")
+		    .text(e => e[0])
+		    .attr("x", (e, i) => (i + 0.5) * barWidth)
+		    .attr("y", e => height - (e * scaling)));
 	console.log("created bar chart");
 };
 
@@ -65,10 +67,10 @@ function chart(width, height, padding = 0) {
 		
 	svg.selectAll("rect")
 		.data(dataset)
-		.join(enter => enter.append("rect"))
-		.attr("x", (e, i) => i * barWidth)
-		.attr("y", e => height - (e * 4))
-		.attr("width", barWidth - padding)
-		.attr("height", (e)  => e * 4)
-		.attr("fill", e => "rgb(25, 105, " + e[1] + ")");
+		.join(enter => enter.append("rect")
+		    .attr("x", (e, i) => i * barWidth)
+		    .attr("y", e => height - (e * 4))
+		    .attr("width", barWidth - padding)
+		    .attr("height", (e)  => e * 4)
+		    .attr("fill", (d) => "rgb(0, 0, " + (d * 10) + ")"));
 }
