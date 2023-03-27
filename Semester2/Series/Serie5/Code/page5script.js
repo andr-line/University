@@ -60,17 +60,18 @@ function chart(data, width, height, padding = 0) {
 			.attr("font-family", "sans-serif")
 			.attr("font-size", "11px")
 			.attr("fill", "white"));
+
 	
 	const yAxis = d3.axisLeft(yScale)
 		.ticks(5,4n);
 
 	const yScale = d3.scaleLinear()
 		.domain([0, maxValue])
-		.range([height, 10]);
+		.range([height, 0]);
 
 	svg.append("g")
 		.attr("class", "axis")
-		.attr("transform", "translate(" + 0 + ", 0)")
+		.attr("transform", "translate(" + 20 + ", 0)")
 		.call(yAxis);
 
 	console.log("created bar chart");
