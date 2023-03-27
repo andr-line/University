@@ -1,24 +1,29 @@
 // import data from './data/students_flags.json' assert {type: 'json'};
-// Doesn't work for me (Safari on iPad)
+// Doesn't work for me (Safari on iPad), therefore the following workaround:
 
 let data = {};
 fetch("./data/students_flags.json")
 	.then(response => response.text())
 	.then(data => {
 		data = JSON.parse(data);
-		// Manipulate the data into a single alphabetically sorted array:
+
+		// Manipulate the data into a single array:
 		data = data.data
 		    .map(e => e.flags)
 			.flat()
 			.map(e => e.replace(/[^a-z]/gi, ''));
-		console.log(data);
+		
 		// Count the number of occurrences of each element in the array:
 		data = data.reduce(function (acc, curr) { return acc[curr] = (acc[curr] || 0) + 1, acc }, {});
 		data = Object.entries(data)
 			.sort((a,b) => b[1] - a[1])
-		console.log(data[0]);
+
+		// Get the dimensions of the viewport:
+		let w = window.innerWidth;
+		let h = window.innerHeight;
 		
-		chart(data, 800, 500, 1)
+		// Create the chart with the data:
+		chart(data, w * 0.7, h * 0.6, 1);
 	})
 	.catch(error => {
 		//console.error(error);
@@ -57,9 +62,9 @@ function chart(data, width, height, barPadding = 0, padding = 20) {
 		    .text(e => e[0])
 			.attr("x", (e, i) => (i + 0.5) * barWidth)
 			.attr("y", e => diagramHeight - e[1] * scaling - 3)
-			.attr("transform", (e, i) => "rotate(-90, " + (i * barWidth + barWidth * 0.5) + ", " + (diagramHeight - e[1] * scaling - 3) + ") translate(" + -padding * 2 + ", 2)" )
+			.attr("transform", (e, i) => "rotate(-90, " + (i * barWidth + barWidth * 0.5) + ", " + (diagramHeight - e[1] * scaling - 3) + ") translate(" + -padding * 2 + ", 3)" )
 			.attr("font-family", "sans-serif")
-			.attr("font-size", "11px")
+			.attr("font-size", "15px")
 			.attr("fill", "gray"));
 
 
