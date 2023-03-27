@@ -18,8 +18,7 @@ fetch("./data/students_flags.json")
 			.sort((a,b) => b[1] - a[1])
 		console.log(data[0]);
 		
-		barChart(data, 500, 300);
-		//chart(data, 800, 500, 1)
+		chart(data, 800, 500, 1)
 	})
 	.catch(error => {
 		//console.error(error);
