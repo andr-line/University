@@ -71,4 +71,10 @@ function chart(width, height, padding = 0) {
 		.attr("width", barWidth - padding)
 		.attr("height", (e)  => e * 4)
 		.attr("fill", e => "rgb(25, 105, " + e[1] + ")");
-}
+
+	svg.selectAll("text")
+		.data(data)
+		.join(enter => enter.append("text"))
+		.text(e => e[0]);
+	console.log("created bar chart");
+};
