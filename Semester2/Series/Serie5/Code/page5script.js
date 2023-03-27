@@ -28,37 +28,8 @@ fetch("./data/students_flags.json")
 	
 
 // D3.js :
-function barChart(data, width, height) {
-	const barWidth = width / data.length;
-	const scaling = 4;
-	
-	const svg = d3.select("body")
-		.append("svg")
-		.attr("width", width)
-		.attr("height", height);
-
-	svg.selectAll("rect")
-		.data(data)
-		.join(enter => enter.append("rect")
-		    .attr("x", (e, i) => i * barWidth)
-		    .attr("y", e => height - (e[1] * scaling))
-		    .attr("width", barWidth)
-		    .attr("heigth", e => e[1] * scaling)
-		    .attr("fill", e => "rgb(75, 150, " + e[1] + ")"));
-		
-	svg.selectAll("text")
-		.data(data)
-		.join(enter => enter.append("text")
-		    .text(e => e[0])
-		    .attr("x", (e, i) => (i + 0.5) * barWidth)
-		    .attr("y", e => height - (e * scaling)));
-	console.log("created bar chart");
-};
-
 function chart(data, width, height, padding = 0) {
-	let dataset = [ ["number one",100], ["number two",200], ["number three",50]];
-	dataset = data;
-	const barWidth = width / dataset.length;
+	const barWidth = width / data.length;
 
 	const svg = d3.select("body")
 		.append("svg")
@@ -66,7 +37,7 @@ function chart(data, width, height, padding = 0) {
 		.attr("height", height);
 		
 	svg.selectAll("rect")
-		.data(dataset)
+		.data(data)
 		.join(enter => enter.append("rect")
 		    .attr("x", (e, i) => i * barWidth)
 		    .attr("y", e => height - (e[1] * 4))
