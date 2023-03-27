@@ -16,10 +16,10 @@ fetch("./data/students_flags.json")
 		data = data.reduce(function (acc, curr) { return acc[curr] = (acc[curr] || 0) + 1, acc }, {});
 		data = Object.entries(data)
 			.sort((a,b) => b[1] - a[1])
-		console.log(data);
+		console.log(data[0]);
 		
-		barChart(data, 500, 300);
-		chart(800, 500, 1)
+		//barChart(data, 500, 300);
+		chart(data, 800, 500, 1)
 	})
 	.catch(error => {
 		//console.error(error);
@@ -56,8 +56,8 @@ function barChart(data, width, height) {
 	console.log("created bar chart");
 };
 
-function chart(width, height, padding = 0) {
-	const dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13, 11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+function chart(data, width, height, padding = 0) {
+	const dataset = [ ["number one",100], ["number two",200], ["number three",50]];
 	const barWidth = width / dataset.length
 
 	const svg = d3.select("body")
@@ -69,8 +69,8 @@ function chart(width, height, padding = 0) {
 		.data(dataset)
 		.join(enter => enter.append("rect")
 		    .attr("x", (e, i) => i * barWidth)
-		    .attr("y", e => height - (e * 4))
+		    .attr("y", e => height - (e[1] * 4))
 		    .attr("width", barWidth - padding)
-		    .attr("height", (e)  => e * 4)
-		    .attr("fill", (d) => "rgb(0, 0, " + (d * 10) + ")"));
+		    .attr("height", (e)  => e[1] * 4)
+		    .attr("fill", (e) => "rgb(0, 0, " + (e[1] * 10) + ")"));
 }
