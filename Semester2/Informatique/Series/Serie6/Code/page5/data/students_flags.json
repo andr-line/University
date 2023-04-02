@@ -1,0 +1,129 @@
+{
+    "title": "Flags used by students in Series 04",
+    "course": "Traitement de Données et Visualisation",
+    "semester": "Spring",
+    "year": 2023,
+    "random_comment": "The cake is a lie.",
+    "data": [
+        {
+            "student_code": "0101",
+            "flags": ["France", "Italy", "LGBTQ+", "Belgium"]
+        },
+        {
+            "student_code": "0102",
+            "flags": ["Switzerland", "Germany", "France", "Sweden"]
+        },
+        {
+            "student_code": "0201",
+            "flags": ["Japan", "Bahamas", "Panama"]
+        },
+        {
+            "student_code": "0301",
+            "flags": ["France", "Sweden", "Greece"]
+        },
+        {
+            "student_code": "0302",
+            "flags": ["Switzerland", "France", "Sweden"]
+        },
+        {
+            "student_code": "0303",
+            "flags": ["France", "Sweden", "Switzerland"]
+        },
+        {
+            "student_code": "0401",
+            "flags": ["South Korea", "Germany", "Italy", "Norway"]
+        },
+        {
+            "student_code": "0402",
+            "flags": ["France", "Sweden", "Chili"]
+        },
+        {
+            "student_code": "0501",
+            "flags": ["Bolivia", "Switzerland", "Italy"]
+        },
+        {
+            "student_code": "0601",
+            "flags": ["Switzerland", "Germany", "France", "Italy"]
+        },
+        {
+            "student_code": "0801",
+            "flags": ["Germany", "Japan", "Ireland", "Finland", "Switzerland"]
+        },
+        {
+            "student_code": "1001",
+            "flags": ["France", "Belgium", "Netherlands"]
+        },
+        {
+            "student_code": "1002",
+            "flags": ["Switzerland", "France", "Germany", "Japan"]
+        },
+        {
+            "student_code": "1003",
+            "flags": ["France", "Sweden", "Mali"]
+        },
+        {
+            "student_code": "1004",
+            "flags": ["France", "Switzerland", "Sweden"]
+        },
+        {
+            "student_code": "1201",
+            "flags": ["Switzerland", "France", "Italy"]
+        },
+        {
+            "student_code": "1202",
+            "flags": ["France", "Italy", "Romania"]
+        },
+        {
+            "student_code": "1203",
+            "flags": ["Switzerland", "France", "Italy", "Germany"]
+        },
+        {
+            "student_code": "1204",
+            "flags": ["Austria", "Poland", "Switzerland"]
+        },
+        {
+            "student_code": "1205",
+            "flags": ["Queertown", "Transtown", "Intertown", "Polytown"]
+        },
+        {
+            "student_code": "1206",
+            "flags": ["Switzerland", "Italy", "Sweden"]
+        },
+        {
+            "student_code": "1301",
+            "flags": ["United Kingdom", "Switzerland", "Ireland"]
+        },
+        {
+            "student_code": "1302",
+            "flags": ["Switzerland", "Sweden", "Denmark", "Finland"]
+        },
+        {
+            "student_code": "1303",
+            "flags": ["Norway", "Germany", "Denmark", "Austria", "Switzerland"]
+        },
+        {
+            "student_code": "1304",
+            "flags": ["Denmark", "France", "Bangladesh"]
+        },
+        {
+            "student_code": "1305",
+            "flags": ["France", "Jamaica", "Czech Republic"]
+        },
+        {
+            "student_code": "1306",
+            "flags": ["Switzerland", "France", "Sweden"]
+        },
+        {
+            "student_code": "1401",
+            "flags": ["Switzerland", "Germany", "Iceland"]
+        },
+        {
+            "student_code": "1801",
+            "flags": ["France", "Switzerland", "Poland", "Italy"]
+        },
+        {
+            "student_code": "2501",
+            "flags": ["France", "Japan", "Germany"]
+        }
+    ]
+}

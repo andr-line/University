@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>D3: An HTML div tooltip</title>
+		<script type="text/javascript" src="../d3/d3.min.js"></script>
+		<style type="text/css">
+
+			rect:hover {
+				fill: orange;
+			}
+			
+			#tooltip {
+				position: absolute;
+				width: 200px;
+				height: auto;
+				padding: 10px;
+				background-color: white;
+				border-radius: 10px;
+				box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+				pointer-events: none;
+				opacity: 0;
+			}
+						
+			#tooltip p {
+				margin: 0;
+				font-family: sans-serif;
+				font-size: 16px;
+				line-height: 20px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="tooltip">
+			<p><strong>Important Label Heading</strong></p>
+			<p><span id="value">100</span>%</p>
+		</div>
+		<script type="text/javascript">
+
+			const w = 600;
+			const h = 250;
+			
+			const dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+							11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+
+			const xScale = d3.scaleBand()
+							.padding(.05)
+							.domain(d3.range(dataset.length))
+							.range([0, w]);
+
+			const yScale = d3.scaleLinear()
+							.domain([0, d3.max(dataset)])
+							.range([0, h]);
+			
+			//Create SVG element
+			const svg = d3.select("body")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h);
+
+			//Create bars
+			svg.selectAll("rect")
+			   .data(dataset)
+			   .join((enter) => enter.append("rect")
+			   .attr("x", (d, i) => xScale(i))
+			   .attr("y", (d) => h - yScale(d))
+			   .attr("width", xScale.bandwidth())
+			   .attr("height", (d) => yScale(d))
+			   .attr("fill", (d) => "rgb(0, 0, " + (d * 10) + ")")
+
+			   .on("mouseover", (event,d) => {
+
+					//Get this bar's x/y values, then augment for the tooltip
+					const xPosition = parseFloat(d3.select(event.currentTarget).attr("x")) + xScale.bandwidth() / 2;
+					const yPosition = parseFloat(d3.select(event.currentTarget).attr("y")) / 2 + h / 2;
+
+					//Update the tooltip position and value, and show the tooltip
+					d3.select("#tooltip")
+						.style("left", xPosition + "px")
+						.style("top", yPosition + "px")						
+						.style("opacity",.9)
+						.select("#value")
+						.text(d)
+
+			   })
+			   .on("mouseout", () => {
+			   
+					//Hide the tooltip
+					d3.select("#tooltip").style("opacity", .0);
+					
+			   })
+
+			   );			
+			
+		</script>
+	</body>
+</html>

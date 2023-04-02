@@ -1,0 +1,18 @@
+/* Flags */
+
+.flags > svg {
+	width: 40%;
+	margin: 1em;
+	padding: 1em;
+	background: var(--bgcolor);
+	transition: background 0.4s;
+}
+
+.flags > svg.selected {
+	background: var(--secondarycolor);
+	transition: background 0.4s;
+}
+
+#country_name::first-letter {
+	text-transform: capitalize;
+}

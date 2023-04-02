@@ -1,0 +1,101 @@
+:root {
+	--bgcolor: #FFFFFF;
+	--textcolor: #000000;
+	--secondarycolor: #cdcdcd;
+}
+
+:root.darkmode {
+	--bgcolor: #121212;
+	--textcolor: #FFFFFF;
+	--secondarycolor: #343434;
+}
+
+/* remove highlighting when clicking */
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* General */
+
+body {
+	font-size: calc(15px + 0.390625vw);
+	color: var(--textcolor);
+	background: var(--bgcolor);
+	justify-content: center;
+	text-align: center;
+}
+
+body.main {
+	display: flex;
+    flex-flow: column;
+    height: 100vh;
+}
+
+body:not(.main) {
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+/* HTML includes */
+
+iframe {
+	width: 100%;
+	height: 100%;
+}
+
+.contentDiv {
+	flex: 1;
+	border: 1px solid red;
+}
+
+/* Navigation bar */
+
+.navbar {
+	flex: 1;
+	display: flex;
+	justify_content: flex-start;
+	flex-basis: 300px;
+	flex-shrink: 0;
+	background: orange;
+}
+
+.navbarbutton {
+	all: unset;
+	color: black;
+	margin-left: 4rem;
+	margin-right: 4rem;
+	vertical-align: center;
+	text-align: center;
+}
+
+.navbarbutton.active {
+	background: yellow;
+}
+
+/* Tables */
+
+table {
+	width: 100%;
+	border: 2px solid var(--secondarycolor);
+	border-collapse: collapse;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+}
+
+td, th{
+	width: 50%;
+	border: 2px solid var(--secondarycolor);
+	border-collapse: collapse;
+	padding: 1rem;
+}
+
+th {
+	font: bold 4em Arial;
+}
+
+/* Links */
+
+a {
+	color: var(--textcolor);
+}

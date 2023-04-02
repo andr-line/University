@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Website</title>
+	
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<script type="text/javascript" src="script.js"></script>
+</head>
+
+<body class="main">
+    <div class="navbar">
+		<button class="navbarbutton" onclick="changePage(1)" onmouseover="console.log('Adolf')">Adolf</button>
+		<button class="navbarbutton" onclick="changePage(2)" onmouseover="console.log('Android')">Android</button>
+		<button class="navbarbutton" onclick="changePage(3)" onmouseover="console.log('Calculator')">Area calculator</button>
+		<button class="navbarbutton" onclick="changePage(4)" onmouseover="console.log('Flags')">Flags</button>
+		<button class="navbarbutton" onclick="changePage(5)" onmouseover="console.log('Bar chart')">Bar chart</button>
+		<button class="navbarbutton" onclick="changePage(6)" onmouseover="console.log('Map')">Map</button>
+		<button class="navbarbutton" onmouseover="console.log('about')" onclick="alert('This site was created on the 8th of march 2023 for a series. Don‘t take it seriously please.')">About</button>
+    </div>
+	<div class="contentDiv">
+	    <iframe id="contentBox" src="../page1/page1.html" frameborder="0">
+            Warning: page content could not be included.
+        </iframe>
+	</div>
+</body>

@@ -1,0 +1,60 @@
+.body {
+	
+    text-align: center;
+    content-align: center;
+	justify-content: center;
+    font-family: 'Arial';
+    font-size: 1em;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+a {
+	color: var(--textcolor);
+}
+
+/* index */
+
+.citation:first-child {
+	background: var(--secondarycolor);
+	font: bold 2em Verdana, Geneva, sans-serif;
+	padding: 2em;
+}
+
+.copyright {
+	color: var(--secondarycolor);
+	padding-top: 8em;
+	padding: 2em;
+}
+
+/* Android */
+
+.white {
+	fill: white;
+}
+
+.white.darkmode {
+	fill: black;
+}
+
+button:not(.navbarbutton) {
+	width: 100%;
+	background: var(--secondarycolor);
+	margin-top: 3em;
+	border-radius: 1em;
+	font: bold 2em Verdana, Geneva, sans-serif;
+	color: var(--textcolor);
+	border: 0;
+}
+
+svg {
+	margin-top: 3em;
+}
+
+svg.text {
+	color: white
+}
+
+input[type="text"], input[type="number"], select {
+  color: var(--textcolor);
+}
