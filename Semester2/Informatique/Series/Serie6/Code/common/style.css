@@ -29,7 +29,8 @@ body {
 body.main {
 	display: flex;
     flex-flow: column;
-    height: 100vh;
+    height: 100dvh;
+	overflow: hidden;
 }
 
 body:not(.main) {
@@ -46,31 +47,35 @@ iframe {
 
 .contentDiv {
 	flex: 1;
-	border: 1px solid red;
+	border: 1px solid var(--textcolor);
 }
 
 /* Navigation bar */
 
 .navbar {
-	flex: 1;
-	display: flex;
-	justify_content: flex-start;
-	flex-basis: 300px;
-	flex-shrink: 0;
 	background: orange;
+}
+
+.buttons {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 15%;
+	margin-right: 15%;
 }
 
 .navbarbutton {
 	all: unset;
 	color: black;
-	margin-left: 4rem;
-	margin-right: 4rem;
+	height: 4rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
 	vertical-align: center;
-	text-align: center;
+	transition: background 0.4s;
 }
 
 .navbarbutton.active {
 	background: yellow;
+	transition: background 0.4s;
 }
 
 /* Tables */

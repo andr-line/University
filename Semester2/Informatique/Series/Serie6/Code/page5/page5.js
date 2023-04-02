@@ -1,6 +1,7 @@
 // import data from './data/students_flags.json' assert {type: 'json'};
 // Doesn't work for me (Safari on iPad), therefore the following workaround:
 
+// Import data
 let data = {};
 fetch("data/students_flags.json")
 	.then(response => response.text())
@@ -15,6 +16,7 @@ fetch("data/students_flags.json")
 		
 		// Count the number of occurrences of each element in the array:
 		data = data.reduce(function (acc, curr) { return acc[curr] = (acc[curr] || 0) + 1, acc }, {});
+		// Sort the resulting two dimensional array by number of occurrences:
 		data = Object.entries(data)
 			.sort((a,b) => b[1] - a[1])
 
@@ -26,18 +28,15 @@ fetch("data/students_flags.json")
 		chart(data, w * 0.7, h * 0.6, 1);
 	})
 	.catch(error => {
-		//console.error(error);
+		console.error(error);
 	});
-
-//chart(800, 500, 1)
-	
 
 // D3.js :
 function chart(data, width, height, barPadding = 0, padding = 20) {
     const diagramWidth = width - padding * 2;
 	const diagramHeight = height - padding * 2;
 	const barWidth = diagramWidth / data.length;
-	// scaling using the maximum value in the data: ["name", value]
+	// scaling using the maximum value in the data
     const maxValue = data.reduce((a,b) => a[1] > b[1] ? a : b)[1];
 	const scaling = diagramHeight / maxValue;
 
@@ -80,5 +79,5 @@ function chart(data, width, height, barPadding = 0, padding = 20) {
 		.attr("transform", "translate(" + 0 + ", 0)")
 		.call(yAxis);
 
-	console.log("created bar chart");
+	//console.log("created bar chart");
 };

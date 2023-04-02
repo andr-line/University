@@ -1,0 +1,11 @@
+.white {
+	fill: white;
+}
+
+.white.darkmode {
+	fill: black;
+}
+
+svg {
+	padding-top: 4em;
+}
