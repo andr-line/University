@@ -47,7 +47,6 @@ iframe {
 
 .contentDiv {
 	flex: 1;
-	border: 1px solid var(--textcolor);
 }
 
 /* Navigation bar */
@@ -86,6 +85,7 @@ table {
 	border-collapse: collapse;
 	margin-bottom: 2rem;
 	margin-top: 2rem;
+	background: var(--bgcolor);
 }
 
 td, th{

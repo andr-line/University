@@ -1,0 +1,51 @@
+div#map {
+    display: inline-block;
+    overflow: auto;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: left;
+}
+
+path {
+	transition: stroke-width 0.1s;
+}
+
+path:hover {
+	stroke-width: 3;
+	width: 110%;
+}
+
+path.darkmode {
+	stroke: white;
+}
+
+.body {
+	display: grid;
+}
+
+.bodycontent {
+	grid-column: 1;
+	grid-row: 1;
+}
+
+#tooltip {
+	opacity: 0;
+	transition: opacity 0.2s ease, top 0.05s ease, left 0.05s ease;
+	position: absolute;
+    width: auto;
+    height: auto;
+	pointer-events: none;
+}
+
+table {
+    position: absolute;
+    width: auto;
+    height: auto;
+    font: 0.8em sans-serif;
+    pointer-events: none;
+}
+
+td {
+	padding: 0.2em;
+}

@@ -8,10 +8,37 @@
 	<link rel="stylesheet" href="page6.css" type="text/css" />
 	<script type="text/javascript" src="../common/script.js"></script>
 	<script src="https://d3js.org/d3.v7.min.js"></script>
-	<script type="text/javascript" src="page6.js"></script>
 </head>
-
-<body>
-	<div id="map" align="center"></div>
+<body class="body">
+    <div class="svg-container bodycontent" id="map"></div>
+	<div class="tooltip bodycontent" id="tooltip">
+		<table class="tooltiptable">
+			<tr>
+			    <td>Country</td>
+			    <td id="name" class="datafield"></td>
+		    </tr>
+			<tr>
+				<td>Type</td>
+				<td id="type" class="datafield"></td>
+			</tr>
+			<tr>
+				<td>Population</td>
+				<td id="pop_est" class="datafield"></td>
+			</tr>
+			<tr>
+				<td>Region</td>
+				<td id="region_wb" class="datafield"></td>
+			</tr>
+			<tr>
+				<td>Economy</td>
+				<td id="economy" class="datafield"></td>
+			</tr>
+			<tr>
+				<td>GDP</td>
+				<td id="gdp_md_est" class="datafield"></td>
+			</tr>
+		</table>
+	</div>
+    <script src="page6.js" type="text/javascript"></script>
 </body>
 </html>
